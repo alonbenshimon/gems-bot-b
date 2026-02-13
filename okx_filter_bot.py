@@ -1,3 +1,4 @@
+from token_fix import extract_relevant_tokens
 import os, time, requests
 
 BASE = "https://www.gems.trade"
@@ -54,7 +55,7 @@ def classify(text: str):
         elif m.endswith("btc"):
             bases.add(m[:-3])
 
-    relevant_tokens = sorted([b.upper() for b in bases if b in t])
+    relevant_tokens = extract_relevant_tokens(text, markets)
 
     if not relevant_tokens:
         return None
