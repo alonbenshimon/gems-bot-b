@@ -122,6 +122,9 @@ def main():
             if not chat_id or not text:
                 continue
 
+            # Only process messages that look like OKX announcements
+            if "okx" not in text.lower():
+                continue
             result = classify(text)
 
             if not result:
