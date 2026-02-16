@@ -90,7 +90,7 @@ def main():
         return
 
     markets = get_markets()
-    last_seen = set()
+    last_seen = set(fetch_latest_okx_links())
 
     # >>> תכניס כאן את ה-chat_id שלך
     CHAT_ID = 7652982274
