@@ -106,7 +106,7 @@ def main():
             if not title:
                 continue
 
-            result = classify(title + " " + full_text, markets)
+            result = classify(title, markets)
 
             if result:
                 reply = "✅ RELEVANT\n\n"
